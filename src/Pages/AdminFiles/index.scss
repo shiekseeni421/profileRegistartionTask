@@ -1,0 +1,18 @@
+.admin-Container{
+    background-color:aliceblue;
+    height: 100vh;
+
+    .adminHeading{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    .NO-Data{
+        text-align: center;
+        color: red;
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+}

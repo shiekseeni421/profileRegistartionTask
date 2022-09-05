@@ -1,0 +1,58 @@
+.profile-container{
+    background-color: rgb(211, 219, 219);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .profile-page{
+        background-color: #ffffff;
+        border-radius: 25px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        .profile-Icon{
+            font-size: 65px;
+            align-self: center;
+        }
+        .profile-Name{
+            font-size: 25px;
+            text-transform:uppercase;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        .information-container{
+            background-color:rgb(211, 219, 219) ;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+        .btn{
+            align-self: center;
+            background-color: rgb(9, 69, 182);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 35px;
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: none !important;
+        }
+    }
+}
+.Profile-contact{
+    background-color: rgb(241, 240, 233);
+    padding: 10px;
+    .QuestionHeading{
+        font-weight: 500;
+        font-size: 15px;
+        .Answer{
+            font-weight: 100;
+        }
+    }
+}
