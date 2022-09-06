@@ -20,13 +20,16 @@ function LoginPage() {
     let parsedTodoList = JSON.parse(stringifiedTodoList);
 
     let email = data["userEmail"];
-    let index = email.indexOf("@") + 1;
-    let Length = email.length;
-    let slicePart = email.slice(index, Length);
+    let index = email.indexOf("@");
+    let slicePart = email.slice(0, index);
 
-    if (slicePart === "doodleblue.com") {
-      let path = "/adminPortal";
-      navigate(path);
+    if (slicePart === "admin123") {
+      if (data["UserPassword"] === "admin123") {
+        let path = "/adminPortal";
+        navigate(path);
+      } else {
+        alert("Wrong Password");
+      }
     } else {
       if (parsedTodoList === null) {
         alert("Please sign In");
@@ -84,7 +87,7 @@ function LoginPage() {
             {...register("UserPassword", {
               required: "You must specify a password",
               minLength: {
-                value: 8,
+                value: 4,
                 message: "Password must have at least 8 characters",
               },
             })}
