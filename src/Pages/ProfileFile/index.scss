@@ -1,5 +1,4 @@
 .profile-container{
-    background-color: rgb(211, 219, 219);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -30,7 +29,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
+            padding: 5px;
             margin-bottom: 5px;
         }
         .btn{
@@ -46,13 +45,25 @@
     }
 }
 .Profile-contact{
-    background-color: rgb(241, 240, 233);
-    padding: 10px;
-    .QuestionHeading{
-        font-weight: 500;
-        font-size: 15px;
-        .Answer{
-            font-weight: 100;
+        .profile-Icon{
+            width: 90px;
+            height: 90px;
+             border-radius: 50%;
+             margin-right: 20px;
+        }
+        .data-Container{
+            background-color: rgb(180, 187, 194);
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            padding: 5px;
+            .answer-Container{
+                margin-left: 10px;
+            }
         }
     }
+
+.mainHeading{
+    font-size: 20px;
+    font-weight: 500;
 }

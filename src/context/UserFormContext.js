@@ -8,15 +8,9 @@ export function UseUserValues() {
 
 export function UserFormProvider({ children }) {
   const [formValues, setFormValues] = useState({});
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
 
   return (
-    <UserFormFunctionality.Provider
-      value={{ formValues, handleChange, setFormValues }}
-    >
+    <UserFormFunctionality.Provider value={{ formValues, setFormValues }}>
       {children}
     </UserFormFunctionality.Provider>
   );

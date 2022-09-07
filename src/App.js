@@ -5,6 +5,8 @@ import RegisterPage from "./Pages/RegistrationFile/RegisterPage";
 import ProfilePage from "./Pages/ProfileFile/ProfilePage";
 import ViewPage from "./Pages/ProfileFile/ViewPage";
 import AdminPage from "./Pages/AdminFiles/adminPage";
+import EditPage from "./Pages/RegistrationFile/EditProfile";
+import AdminViewPage from "./Pages/AdminFiles/adminViewPage";
 
 import { UserFormProvider } from "./context/UserFormContext";
 
@@ -29,6 +31,15 @@ function App() {
         </Routes>
         <Routes>
           <Route exact path="/adminPortal" element={<AdminPage />}></Route>
+        </Routes>
+        <Routes>
+          <Route exact path="/editProfile" element={<EditPage />}></Route>
+        </Routes>
+        <Routes>
+          <Route
+            path="/adminViewProfile/:userId"
+            element={<AdminViewPage />}
+          ></Route>
         </Routes>
       </div>
     </UserFormProvider>

@@ -45,13 +45,22 @@ function LoginPage() {
             setFormValues(formValues);
           }
           if (filterData[0]["password"] === data["UserPassword"]) {
-            let path = "/profile";
-            navigate(path);
+            if (
+              formValues["status"] === "Pending" ||
+              formValues["status"] === "Approved"
+            ) {
+              let path = "/profile";
+              navigate(path);
+            } else {
+              alert("Your Profile is Cancel by Admin please re Submit");
+              let path = "/editProfile";
+              navigate(path);
+            }
           } else {
             alert("enter Correct Password");
           }
         } else {
-          alert("User is Not Present please SignIN");
+          alert("User is Not Present please Sign In");
         }
       }
     }
@@ -68,14 +77,16 @@ function LoginPage() {
             name="userEmail"
             placeholder="Type Your Email"
             {...register("userEmail", {
-              required: true,
-              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              required: "Enter your e-mail",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: "Enter a valid e-mail address",
+              },
             })}
           />
-          <p className="error-text">
-            {" "}
-            {errors.userEmail?.type === "required" && "userEmail is required"}
-          </p>
+          {errors.userEmail && (
+            <p className="error-text">{errors.userEmail.message}</p>
+          )}
         </div>
         <div className="input-container">
           <label>Password</label>
